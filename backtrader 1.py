@@ -6,11 +6,11 @@ cerebro = bt.Cerebro()
 cerebro.broker.set_cash(10000)
 
 data = bt.feeds.YahooFinanceCSVData(
-        dataname='oracle 1995_2014.csv',
+        dataname='NVDA.csv',
         # Do not pass values before this date
-        fromdate=datetime.datetime(2000, 1, 1),
+        fromdate=datetime.datetime(2023, 7, 3),
         # Do not pass values before this date
-        todate=datetime.datetime(2000, 12, 31),
+        todate=datetime.datetime(2024, 7, 3),
         # Do not pass values after this date
         reverse=False)
 

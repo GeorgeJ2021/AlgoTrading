@@ -14,3 +14,11 @@ class TestStrategy(bt.Strategy):
     def next(self):
         # Simply log the closing price of the series from the reference
         self.log('Close, %.2f' % self.dataclose[0])
+        if self.dataclose[0] < self.dataclose[-1]:
+            # current close less than previous close
+            if self.dataclose[-1] < self.dataclose[-2]:
+                # previous close less than the previous close
+
+                # BUY, BUY, BUY!!! (with all possible default parameters)
+                self.log('BUY CREATE, %.2f' % self.dataclose[0])
+                self.buy()
