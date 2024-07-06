@@ -17,7 +17,9 @@ data = bt.feeds.YahooFinanceCSVData(
 
 cerebro.adddata(data)
 cerebro.addstrategy(TestStrategy)
+cerebro.addsizer(bt.sizers.FixedSize, stake=10)
 
 print('Starting Portfolio Value: %.2f' % cerebro.broker.getvalue())
 cerebro.run()
 print('Final Portfolio Value: %.2f' % cerebro.broker.getvalue())
+cerebro.plot()
